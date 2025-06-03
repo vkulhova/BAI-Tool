@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+    --color-black1: #292930;
+    --color-black2: #303038;
+    --color-borderGray: #F5F5F514;
+    --color-borderGray2: #DFD0B8;
+    --color-violet: #6764F1;
+    --color-gray1: #6B6B7B;
+    --color-gray2: #9C9CB0;
+    --color-white: #F5F5F5;
+    --color-yellow: #F3C623;
+    --color-beige: #FFFDF6;
+    --color-beige2: #FEF3E2;
+    --color-orange: #E9A319;
+    --color-darkOrange: #FA812F;
+}
+
+@layer components {
+
+    .scrollbar::-webkit-scrollbar {
+        @apply w-2 rounded-lg
+    }
+
+    .scrollbarSmall::-webkit-scrollbar {
+        @apply w-1
+    }
+
+    html[data-theme=light] .scrollbar::-webkit-scrollbar-track {
+        @apply bg-gray-200
+    }
+
+    html[data-theme=light] .scrollbar::-webkit-scrollbar-thumb {
+        @apply rounded-lg bg-orange-400
+    }
+
+    html[data-theme=dark] .scrollbar::-webkit-scrollbar-track {
+        @apply bg-gray-700
+    }
+
+    html[data-theme=dark] .scrollbar::-webkit-scrollbar-thumb {
+        @apply rounded-lg bg-violet
+    }
+}
