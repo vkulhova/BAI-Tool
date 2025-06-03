@@ -54,8 +54,8 @@ export const useStage4 = () => {
           category.questions.forEach((question, questionIndex) => {
             const questionId = `${sectionIndex}-${categoryIndex}-${questionIndex}`;
             const answer = stage3Answers[questionId] || "";
-            if (answer.isSkipped || answer.answer.trim()) {
-              promptData += `Питання: ${question}\nВідповідь: ${answer}\n\n`;
+            if (answer?.isSkipped || answer?.answer.trim()) {
+              promptData += `Питання: ${question}\nВідповідь: ${answer?.answer}\n\n`;
             }
           });
         });
@@ -79,8 +79,6 @@ export const useStage4 = () => {
         prompt: promptData,
         configs: stages.stage4.config1 || [],
       });
-
-      // setTimeout(() => {}, 60 * 1000);
 
       const result2 = await aiTextRequest({
         prompt: promptData,
