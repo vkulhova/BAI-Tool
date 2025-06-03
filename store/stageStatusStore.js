@@ -87,6 +87,7 @@ export const useStageStatusStore = create()(
 
       resetAllProgress: () =>
         set(() => ({
+          selectedStage: "stage1",
           stageCompletion: {
             stage1: false,
             stage2: false,
