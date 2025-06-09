@@ -64,7 +64,7 @@ const useStage1 = () => {
   const checkAllQuestionsAnswered = (questions, answers) => {
     if (questions.length === 0) return false;
     return questions.every(
-      (q) => answers[q.id]?.isSkipped || isValidAnswer(answers[q.id]?.answer)
+      (q) => answers[q.id]?.isSkipped || isValidAnswer(answers[q.id])
     );
   };
 

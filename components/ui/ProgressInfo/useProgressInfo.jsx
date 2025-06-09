@@ -8,7 +8,7 @@ const useProgressInfo = ({ allQuestions, answers, resp, stage }) => {
   const isEditing = isStageInEditMode(stage);
 
   const answeredCount = allQuestions.filter(
-    (q) => answers[q.id]?.isSkipped || isValidAnswer(answers[q.id]?.answer)
+    (q) => answers[q.id]?.isSkipped || isValidAnswer(answers[q.id])
   ).length;
 
   const progressPercentage =

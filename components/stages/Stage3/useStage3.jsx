@@ -101,7 +101,7 @@ const useStage3 = () => {
     return allQuestions.every(
       (q) =>
         stageAnswers[q.id]?.isSkipped ||
-        isValidAnswer(stageAnswers[q.id]?.answer)
+        isValidAnswer(stageAnswers[q.id])
     );
   }, [allQuestions, stageAnswers]);
 
